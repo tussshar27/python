@@ -1,0 +1,5 @@
+Command for cmd to python/django environment
+
+$conda init
+$CALL conda.bat activate
+$conda activate base
