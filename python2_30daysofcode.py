@@ -22,7 +22,9 @@ print(c+d)  #12
 print(c,d)  #1 2
 
 # print()
-print("tushar", 2,7,sep="~",end="007\n")
+print("tushar", 2,7,sep="~",end="007")    #sep means (seperated by)
+print("tushar", 2,7,sep="~",end="007\n")    #sep means (seperated by)
+print("tushar", 2,7,sep="~",end="007")    #sep means (seperated by)
 
 # TypeCasting
 #1. implicit Typecasting
@@ -63,6 +65,11 @@ print(e1[2])
 print(e1[3])
 
 # to access multiline string, use for loop
+# for in loop
+
+for char1 in e1:
+    print(char1)
+
 for char1 in e2:
     print(char1)
 
@@ -91,7 +98,7 @@ heading = "introduction tO Strings iN pYThon"
 print(heading.capitalize())     # it will uppercase initial letter and lower case everything
 print(len(heading))         # 33
 print(heading.center(50))   #33+17=50   # it will shift text to center within 50 size as mentioned
-print(s.count("Tushar"))
+print(s.count("Tushar"))    #starts from index 2
 print(s.endswith("!!!"))
 print(s.endswith("har",2,8))
 print(s.find("ush"))        # gives first occurance index
@@ -212,6 +219,7 @@ for i in range(5):
         continue
     print(i)
 
+# list
 # list in python can be changed, but tuple cannot be changed.
 l = [1,2,3,"Tushar",True]
 print(type(l))
