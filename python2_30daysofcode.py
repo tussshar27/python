@@ -137,7 +137,7 @@ else:
 
 # match case
 # it is similar to if-else block.
-# there is no need of declaring break statement in case statement where we have to declare break in c/c++ or else it will all the cases content.
+# there is no need of declaring break statement in case statement where we have to declare break in c/c++ or else it will run all the cases content.
 
 # x = int(input("Enter a number"))
 x = 10
@@ -220,7 +220,7 @@ for i in range(5):
     print(i)
 
 # list
-# list in python can be changed, but tuple cannot be changed.
+# list in python can be changed, but string and tuple cannot be changed.
 l = [1,2,3,"Tushar",True]
 print(type(l))
 print(l)
@@ -235,6 +235,7 @@ print(l[len(l)-3])
 print(l[5-3])
 print(l[2])
 
+# if in statement
 if "Tushar" in l:
     print(True)
 else:
@@ -337,7 +338,7 @@ def square(n):
     return n**2
 
 print(square(10))
-print(square.__doc__)   #to call docstring use __doc__
+print(square.__doc__)   #it prints comment present inside function
 
 # PEP 8
 # python enhancement proposal
@@ -403,7 +404,7 @@ print(s3)
 
 print(s1)
 print(s2)
-print(s1.intersection(s2))
+print(s1.intersection(s2))  #intersect
 print("s1",s1)
 
 print(s1.intersection_update(s2))
@@ -551,7 +552,7 @@ for mark in marks:
     index += 1
 
 print("///////////////////////////////////////////")
-# by using enumerate function, we can stop using temp variable
+# by using enumerate function, we can stop declaring or incrementing temp variable such as index
 for index, mark in enumerate(marks):
     print(mark)
     if index == 2:
@@ -587,7 +588,7 @@ import math
 print(dir(math))    #this will prnt all the fnctons and variables availale in math package.
 
 
-# from math import sqrt, pi
+from math import sqrt, pi
 # result = sqrt(2)
 # print(result)
 
@@ -608,7 +609,7 @@ print(tush)
 # __name__ == "__main__"
 
 # name is set to main, when you run program without importing other python script.
-import tushar       #just by importing tushar,tushar.py fi;e will run
+import tushar       #just by importing tushar,tushar.py file will run
 tushar.welcome1()
 print(__name__)
 
@@ -640,7 +641,7 @@ print(os.getcwd())
 
 # local and global variable
 # a local variale is a variable which is defined in a function
-# were as, global variable is a variable which is defined outside the function and can be accessed anywhere.
+# were as, global variable is a variable which is defined outside the function or can be declared inside a function but using global keyword and can be accessed anywhere.
 
 x = 5
 
@@ -662,28 +663,23 @@ os.chdir("../")
 print(os.getcwd())
 
 # Reading a file
-
 f = open('myfile.txt', 'r')
 print(f)
-text = f.read()
-print(text)
-f.close()   #not mandatory in read mode, ut a good practise to close file at the end.
+print(f.read())
+f.close()   #not mandatory in read mode, but a good practise to close file at the end.
 
+# writing a file
+# two types: overwrite (w) and append (a)
 
-# Wriitng a file
-# this will overwrite existing text to new text
+# write
+f = open('myfile.txt','w')
+f.write("HEllo Tushar!!!!")
+f.close()
 
-# f = open('myfile.txt', 'w')
-# f.write("Heyyy!")
-# f.close()
-
-
-# Appending a file
-# this will append
-
-# f = open('myfile.txt', 'a')
-# f.write("Heyyy!")
-# f.close()
+# append
+f = open('myfile.txt','a')
+f.write("\nThis is second line")
+f.close()
 
 
 # 'with' statement
@@ -696,7 +692,7 @@ with open('myfile.txt','r') as f:
 # readline() method
 # The readline() method reads a single line from the file. If we want to read multiple lines, we can use a loop.
 # The readlines() method reads all the lines of the file and returns them as a list of strings.
-f = open('myfile.txt','r')
+f = open('myfile.txt','r')  #double quotes can be used
 
 while True:
     line = f.readline()
@@ -761,12 +757,17 @@ def cube(r):
 
 print(cube(5))
 
-l = [1, 2, 4, 6, 3, 8]
-newl = []
-# to find cube of each element of list
-for item in l:
-    newl.append(cube(item))
-print(newl)
+# Q. to find cube of each element of list
+cube = lambda c: c*c*c
+print(cube(9))
+
+l = [2,3,4,5,6]
+ls = []
+for i in l:
+    a = cube(i)
+    print(a)
+    ls.append(cube(i))    #also to store it in empty list
+print(ls)
 
 # by using map function, we can write above code in more efficient way.
 # we use map function and pass the function and list.
@@ -825,7 +826,7 @@ class Person:
     occupation = "Software Engineer"
     networth = 10
 
-    # NOTE: we have to mandatory define self argument in a method , if its defined in a class
+    # NOTE: we have to mandatorily define self argument in a method , if its defined in a class
     def info(self):
         print(f"{self.name} is a {self.occupation}")
 
@@ -847,7 +848,9 @@ c.info()
 
 
 # constructor
-# Constructors are generally used for instantiating an object. The task of constructors is to initialize(assign values) to the data members of the class when an object of class is created.In Python the __init__() method is called the constructor and is always called when an object is created.
+# Constructors are generally used for instantiating an object.
+# The task of constructors is to initialize(assign values) to the data members of the class when an object of class is created.
+# In Python the __init__() method is called the constructor and is always called when an object is created.
 # the above code can written using constructor
 # __init__(self) is a special method used to build constructor
 class Person:
@@ -873,78 +876,120 @@ b1.info()
 a1.info()
 
 
-# Decorators
-def greet(fx):
-    def mfx(*args, **kwargs):   # *args are tuples, **kwargs are dictionaries
-        print("Hiiiiii")
-        fx(*args, **kwargs)
-        print("Goodbyeee")
-    return mfx
+# DECORATOR
+# a decorator is a design pattern that allows you to modify the functionality of a function by wrapping it in another function.
+# Python decorators are a powerful and versatile tool that allow you to modify the behavior of functions and methods. They are a way to extend the functionality of a function or method without modifying its source code.
+# A decorator is a function that takes another function as an argument and returns a new function that modifies the behavior of the original function. The new function is often referred to as a "decorated" function.
 
-# There are two ways to declare decorators, see to hello() and add() calling.
+def greeting(func):     #hello function is passed as an argument
+    def modfunc():      #new function is created.
+        print("Good Morning")
+        func()      #below hello function is called
+        print("Bye, Good day to you!")
+    return modfunc      #decorated function
 
-# @greet
+
+@greeting
 def hello():
     print("Hello World!")
 
-@greet
-def add(a,b):
-    print(a+b)
+hello()
 
-# hello()
-greet(hello)()
 
-add(5,10)
-# greet(add)(5,10)
+# *args are the way to take all the arguments as tuples,
+# **kwargs are  the way to take all the arguments as dictionaries
 
-# getter
-# by using @property, we can call function as an attribute, eg. obj.info
+def greeting(func):     #hello function is passed as an argument
+    def modfunc(*args, **kwargs):      #new function is created.
+        print("Good Morning")
+        func(*args, **kwargs)      #below hello function is called
+        print("Bye, Good day to you!")
+    return modfunc      #decorated function
+
+@greeting
+def add(a,b,c,d):
+    print("Add:",a+b+c+d)
+
+# @greeting     #error: bc below its called in alternate way
+def sub(a,b,c,d):
+    print("Subtract:",a-b-c-d)
+
+add(10,20,30,40)    #function is called
+
+greeting(sub)(10,20,30,40)  #alternate way to call decorator function
+
+
+
+# GETTER
+# in getter, we can call a function as a variable attribute
+# eg. instead of calling object.function(), we can call as object.function
+# we have to define @property decorator above function creation to use as a getter function
 
 class MyClass:
-    def __init__(self,value):
+    def __init__(self, value):
         self._value = value
-        print(self._value)
 
-    # property() is a built - in function that creates and returns a property object.
+    def func1(self):
+        print(f"The value is: {self._value}")
+
+    @property   #getter
+    def func2(self):
+        print(f"The value using getter is: {self._value}")
+
+
+m = MyClass("Homealone")
+m.func1()
+m.func2         #getter
+
+
+# SETTER
+# since getter method is called without using (). that means it does not take any parameters.
+# so to take paramters, we have to use SETTER
+class MyClass2:
+    def __init__(self,value):
+        self._value=value
+
     @property
-    def info(self):
-        print(self._value)
+    def info2(self):
+        print(f"The value: {self._value}")
 
-    # getters do not take any parameters and we cannot set the value through getter method.For that we need setter method which can be added by decorating method with @property_name.setter
-    @info.setter
-    def info(self,value):
-        self._value = value/10
-        print(self._value)
+    @info2.setter
+    def info2(self,value):
+        self.nvalue=value*10
+        print(f"Multiple of 10 is: {self.nvalue}")
 
-obj = MyClass(1200)
-obj.info
-obj.info = 270
+m2 = MyClass2("Annam")
+m2.info2        #calling getter
+m2.info2 = 20   #calling setter
 
 
-# Inheritance
-class Employee:
+# INHERITANCE
+class Employee:     #parent class
     def __init__(self,id,name):
         self.id = id
         self.name = name
 
-    def info(self):
-        print(f"The name of employee:{self.id} is {self.name}")
+    def info3(self):
+        print(f"Id is: {self.id}, Name is: {self.name}")
 
-class Programmer(Employee):     #child class
-    def showLanguage(self):
-        print("The default language is Python")
+class Department(Employee):     #child class    #it will inherit all the properties and attributes of parent class
+    def dep(self):
+        print("The default language is python")
+        print(f"Id is: {self.id}, Name is: {self.name}")
 
-obj = Employee(10,"Tushar")
-obj.info()
-obj2 = Employee(20,"Aman")
-obj2.info()
-obj3 = Programmer(30,"Harry")   #we have to pass parameters since it inherits from Employee class
-obj3.showLanguage()
+e = Employee(27,"Home")
+e.info3()
+
+#we have to pass parameters while calling child class since it inherits from Employee class otherwise it will throw error.
+d = Department(15,"yty")    #this parameters are asigned to parent as well as for child class.
+d.info3()       #calling inherited parent class function
+d.dep()
 
 
 # Access Modifiers
 # There is no public, private, protected thing in python
-# By default, everything is public n python. But, we can set attribtes as private by adding "__" as a prefix
+# By default, everything is public in python.
+# But, we can set attribtes as private by adding "__" as a prefix
 # we can access that attriute by calling as "_Classname__atributename"
 
 
@@ -958,7 +1003,7 @@ print(e.__dir__())      # to view all the methods available for this object
 print(dir(e))           # obj.__dir__() and dir(obj) both are the same
 print(dir(Empl))
 
-# PROTECT: There is only naming convention for protected attribute ie "_" as a prefix. mind that it sno use for protect and its just a anamng convention.
+# PROTECT: There is only naming convention for protected attribute ie "_" as a prefix. mind that its no use for protect and its just a naming convention.
 
 
 # snake, water and gun game
@@ -1117,21 +1162,31 @@ print(help(d))
 
 
 # super keyword
-# super method is used to follow DRY-Donot repeat yourself code method
+# super method is used to follow DRY-(Donot Repeat Yourself) code methodology
 class Parent:
-    def __init__(self,name,id):
-        self.name = name
+    def __init__(self,id,name):
         self.id = id
-
+        self.name = name
+        print(f"for Parent; Id: {self.id}, Name: {self.name}")
 class Child(Parent):
-    def __init__(self,name,id,salary):
-        # using parent class method as it is the same
-        super().__init__(name,id)
-        self.salary = salary
+    def info(self):
+        print(f"for Child; Id: {self.id}, Name: {self.name}")
 
-c = Child("Aman",10,10000)
-print(c.name)
+class Child2(Child):
+    def __init__(self,id,name,sal):
+        # self.id=id
+        # self.name=name
+        super().__init__(id,name)   #using attributes of __init__ method of parent class
+        self.sal = sal
+        print(f"for Child2; Id: {self.id}, Name: {self.name}, Salary: {self.sal}")
 
+p = Parent(10,"Aman")
+print(p.id)
+c = Child(27,"Tushar")
+c.info()
+# whenever object of child class is created, it will first run init method of parent class and assign variable values and then it will run init method of child class
+c2 = Child2(99,"John",5000)
+print(c2.id)
 
 # magic or dunder methods
 # they are special methods which starts and ends wth "__"
