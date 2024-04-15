@@ -92,6 +92,8 @@ print(len(s))       #len function is called different from other functions becau
 print(s.upper())
 print(s.lower())
 print(s.rstrip("!"))    # it will strip from end and not from start
+#chars is an optional argument that specifies the characters to remove. If chars is not specified, all trailing whitespace characters will be removed.
+
 print(s.replace("Tush","Ann"))
 print(s.split(" "))     # it will create list with the mentioned delimiter
 heading = "introduction tO Strings iN pYThon"
