@@ -1,0 +1,26 @@
+class Car:
+    def __init__(self,brand,model):
+        self.brand=brand
+        self.model=model
+        
+    def my_func(self):
+        print(f'my car is of {self.brand} and model is {self.model}')
+        
+        
+my_car = Car("TATA","SIERA")
+print(my_car.brand)     #accessing the variable
+print(my_car.model)
+print(my_car.my_func())
+        
+output:
+TATA
+SIERA
+my car is of TATA and model is SIERA
+None
+
+=== Code Execution Successful ===
+
+
+
+
+
