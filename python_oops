@@ -20,7 +20,38 @@ None
 
 === Code Execution Successful ===
 
+Q. create an ElectricCar class that inherits Car class and has an additional attribute battery_size.
+INHERITANCE
 
+class Car:
+    def __init__(self,brand,model):
+        self.brand=brand
+        self.model=model
+        
+    def my_func(self):
+        print(f'my car is of {self.brand} and model is {self.model}')
+        
+       
+       
+class ElectricCar(Car):
+    def __init__(self,brand,model,battery_size):
+        super().__init__(brand,model)
+        self.battery_size = battery_size
+        
+my_electric_car = ElectricCar('Tesla','Model X','85kWh')
+print(my_electric_car.brand)
+print(my_electric_car.model)
+print(my_electric_car.my_func())
+
+output:
+Tesla
+Model X
+my car is of Tesla and model is Model X
+None
+
+=== Code Execution Successful ===
+
+Q. 
 
 
 
