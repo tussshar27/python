@@ -35,6 +35,8 @@ class Car:
        
 class ElectricCar(Car):
     def __init__(self,brand,model,battery_size):
+        # self.brand=brand
+        # self.model=model
         super().__init__(brand,model)       #calling __init__ thats why no need of self
         self.battery_size = battery_size
         
@@ -51,7 +53,61 @@ None
 
 === Code Execution Successful ===
 
+Q. Modify the Car class to encapsulate the brand attribute, making it private, and provide a getter method to access it.
+ENCAPSULATION
+So we have to make the brand attribute as private. in different language we can declare attribute as a private 
+but in python, we have to give __ as prefix to attribute in order to make it private but note that the object cannot access this attribute from outside 
+but we can access the private attribute within class since it is private so in order to access it we will use getter method.
+
+class Car:
+    def __init__(self,brand,model):
+        self.__brand=brand
+        self.model=model
+        
+    def my_func(self):
+        print(f'my car is of {self.__brand} and model is {self.model}')
+        
+    def get_brand(self):        #getter method
+        return self.__brand + ' !!'
+       
+       
+class ElectricCar(Car):
+    def __init__(self,brand,model,battery_size):
+        # self.brand=brand
+        # self.model=model
+        super().__init__(brand,model)   #calling __init__ thats why no need of self
+        self.battery_size = battery_size
+        
+my_electric_car = ElectricCar('Tesla','Model X','85kWh')
+print(my_electric_car.model)
+print(my_electric_car.my_func())
+# print(my_electric_car.__brand)    #we cant access this private attribute from object but we can access it through getter method.
+print(my_electric_car.get_brand())
+
+output:
+Model X
+my car is of Tesla and model is Model X
+None
+Tesla !!
+
+=== Code Execution Successful ===
+
 Q. 
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
