@@ -94,6 +94,7 @@ Tesla !!
 
 Q. Demonstrate polymorphism by defining a method fuel_type in both Car and ElectricCar classes, but with different behaviors.
 POLYMORPHISM
+NOTE: python is smart enough to know which method should be called while printing with object.
 class Car:
     def __init__(self,brand,model):
         self.__brand=brand
