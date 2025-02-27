@@ -94,7 +94,47 @@ Tesla !!
 
 Q. Demonstrate polymorphism by defining a method fuel_type in both Car and ElectricCar classes, but with different behaviors.
 POLYMORPHISM
+class Car:
+    def __init__(self,brand,model):
+        self.__brand=brand
+        self.model=model
+        
+    def my_func(self):
+        print(f'my car is of {self.__brand} and model is {self.model}')
+        
+    def get_brand(self):        #getter method
+        return self.__brand + ' !!'
+       
+    def fuel_type(self):        #polymorphism
+        return 'Petrol or Diesel'
+       
+class ElectricCar(Car):
+    def __init__(self,brand,model,battery_size):
+        # self.brand=brand
+        # self.model=model
+        super().__init__(brand,model)   #calling __init__ thats why no need of self
+        self.battery_size = battery_size
+        
+    def fuel_type(self):            #polymorphism
+        return 'Electric charge'
+        
+        
+my_electric_car = ElectricCar('Tesla','Model X','85kWh')
+print(my_electric_car.model)
+print(my_electric_car.fuel_type())
 
+
+my_car = Car("TATA","SIERA")
+print(my_car.fuel_type())
+
+output:
+Model X
+Electric charge
+Petrol or Diesel
+
+=== Code Execution Successful ===
+
+Q. 
 
     
     
