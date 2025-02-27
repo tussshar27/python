@@ -1,0 +1,28 @@
+class Car:
+    def __init__(self, a, b):   #constructor
+        self.a = a
+        self.b = b
+        
+    def my_func(self):
+        return f'Brand: {self.a}, model: {self.b}'
+        
+class Bike(Car):
+    def __init__(self, a, b, c):
+        super().__init__(a, b)      #super()
+        self.c = c
+        
+    def my_func(self):
+        return f'Brand: {self.a}, model: {self.b}, EngineType: {self.c}'
+        
+my_car = Car('Mercedes Benz','S Class')
+print(my_car.my_func())
+        
+my_bike = Bike('Ducati', 'Panigale', 'V4')
+print(my_bike.my_func())
+
+output:
+Brand: Mercedes Benz, model: S Class and abc: 0
+Brand: Ducati, model: Panigale, EngineType: V4
+
+=== Code Execution Successful ===.
+
