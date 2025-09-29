@@ -400,8 +400,8 @@ s1 = {2,3,2,5,9,8,3}
 print(s1)
 s2 = {6,5,7,2,3}
 print(s2)
-print(s1.union(s2))
-s3 = s1.update(s2)
+print(s1.union(s2)).  #it combines unique values of S1 and S2 and create new set if we want
+s3 = s1.update(s2).   #it will update existing values of S1 set.
 print(s3)
 
 print(s1)
