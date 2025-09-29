@@ -663,7 +663,7 @@ print(os.getcwd())
 x = 5
 
 def myfunc():
-    global x
+    global x.           #tells py to use global x instead of creating a new local var.
     x = 10
     y = 15
     print(x)
