@@ -141,6 +141,7 @@ else:
 # it is similar to if-else block.
 # there is no need of declaring break statement in case statement where we have to declare break in c/c++ or else it will run all the cases content.
 
+example 1:
 # x = int(input("Enter a number"))
 x = 10
 match x:
@@ -157,6 +158,20 @@ match x:
         print("x is not 80")
     case _:
         print(x)
+
+example 2 match case (if condition):
+number = 10
+
+match number:
+    case x if x > 0:
+        print("Positive number")
+    case x if x < 0:
+        print("Negative number")
+    case _:
+        print("Zero")
+
+output:
+Positive number
 
 
 # for in loop
