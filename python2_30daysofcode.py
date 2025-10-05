@@ -843,7 +843,7 @@ class Person:
     occupation = "Software Engineer"
     networth = 10
 
-    # NOTE: we have to mandatorily define self argument in a method , if its defined in a class
+    # NOTE: we have to mandatorily define self argument in a method , if the function is defined in a class
     def info(self):
         print(f"{self.name} is a {self.occupation}")
 
