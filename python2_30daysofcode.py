@@ -898,10 +898,10 @@ a1.info()
 # Python decorators are a powerful and versatile tool that allow you to modify the behavior of functions and methods. They are a way to extend the functionality of a function or method without modifying its source code.
 # A decorator is a function that takes another function as an argument and returns a new function that modifies the behavior of the original function. The new function is often referred to as a "decorated" function.
 
-def greeting(func):     #hello function is passed as an argument
+def greeting(hello):     #hello function is passed as an argument
     def modfunc():      #new function is created.
         print("Good Morning")
-        func()      #below hello function is called
+        hello()      #below hello function is called
         print("Bye, Good day to you!")
     return modfunc      #decorated function
 
