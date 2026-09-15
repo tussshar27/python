@@ -95,7 +95,7 @@ print(s.rstrip("!"))    # it will strip from end and not from start
 #for rstrip: chars/string is an optional argument that specifies the characters to remove. If chars is not specified, all trailing whitespace characters will be removed.
 
 print(s.replace("Tush","Ann"))
-print(s.split(" "))     # it will create list with the mentioned delimiter
+print(s.split(" "))     # it will create list with the mentioned delimiter        #['!!Tushar!!!!', 'Tushar!!!!!!!!']
 heading = "introduction tO Strings iN pYThon"
 print(heading.capitalize())     # it will uppercase initial letter and lower case everything
 print(len(heading))         # 33
