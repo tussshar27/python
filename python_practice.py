@@ -357,7 +357,7 @@ def func1(n):
     return y
 print(func1(10))
 
-# lambda function
+# lambda function - func is operated as a variable 
 cube = lambda n: n*n*n
 print(cube(n))
 
