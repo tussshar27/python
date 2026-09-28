@@ -286,12 +286,19 @@ def func1():
 
 func1()
 
-# ENUMERATE FUNCTION
+# ENUMERATE FUNCTION - it prints both the index and its value.
+
 x = ('apple', 'banana', 'cherry')
 y = enumerate(x)
 print(type(y))
 print(list(y))
 print(type(list(y)))
+
+fruits = ["apple", "banana", "mango"]
+
+for index, fruit in enumerate(fruits):
+    print(index, fruit)
+
 
 import math
 
