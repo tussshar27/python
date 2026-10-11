@@ -1,3 +1,33 @@
+# Python OOP: The Complete Beginner-to-Advanced Guide:
+# https://chatgpt.com/share/6acba5ad-cccc-83ee-a855-58b84ec02efd
+
+# OOP : Object Oriented Programming
+# it is a way of writing programs by organizing code around objects rather than only writing a sequence of functions.
+
+# Consider a real-world car.
+# A car has:
+# - Properties: brand, color, model, speed.
+# - Behaviours: start, accelerate, brake, stop.
+# In Python, we can represent a car as an object that contains both data and behaviour.
+
+# Basic program:
+car_brand = "BMW"
+car_speed = 0
+
+def accelerate(speed):
+    return speed + 10
+
+car_speed = accelerate(car_speed)
+print(car_brand)
+print(car_speed)
+
+# output:
+BMW
+10
+
+# This works. However, imagine managing 100 cars, each with a different brand, speed, and behaviour. You would need to organize all that data carefully.
+# OOP lets us group related data and behaviour together.
+
 class Car:
     def __init__(self,brand,model):
         self.brand=brand
