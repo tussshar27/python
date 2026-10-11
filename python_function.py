@@ -1,9 +1,20 @@
+# if we write return inside a function then it must be displayed (print()) or used in other calculation like a variable
+# return is not mandatory in function, means we can use or call a function without mentioning return in it.
+def func0(a,b):
+  print(f"a + b: {a+b}")
+
+func0(10,20)
+
 def func1(a,b):
     print("Additon is:",a + b)
     print(f"a + b: {a+b}")
-    return f"a + b:{a+b}"
+    return f"{a+b}"
 
-def greater(a=5,b=10):     # by default a is 5
+calc = func1(10,20)
+
+print(calc)
+
+def greater(a=5,b=10):     # by default a = 5, b = 10
     if(a>b):
         print("A is greater than B",a)
     else:
@@ -11,7 +22,7 @@ def greater(a=5,b=10):     # by default a is 5
 
 print(func1(10,2))
 greater(10,20)
-greater()
+greater()    #it will pick the default values which are passed as parameters
 greater(b=20)
 greater(b=7,a=2)
 
@@ -19,11 +30,25 @@ greater(b=7,a=2)
 # variable length arguments
 # Sometimes we may need to pass more arguments than those defined in the actual function. This can be done using variable-length arguments.
 # The function accesses the arguments by processing them in the form of tuple.
+
+# what is tuple?
+# tuple is ordered and immutable (unchangeable). it is a collection used to store multiple items in a single variable.
+fruits = ("apple", "banana", "mango")
+print(fruits)
+
 def name(*n):
     print("Hello,", n[0], n[1], n[2])
     print(type(n))       # tuple
 
 name("James", "Buchanan", "Barnes")
+
+def func3(*n):
+  print(f"n values are: {n[0]}, {n[1]}")
+  print(type(n))
+
+
+t1 = ('tushar','annam')
+func3(*t1)
 
 # return
 def name(fname, mname, lname):
