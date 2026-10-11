@@ -29,6 +29,27 @@ BMW
 # OOP lets us group related data and behaviour together.
 
 class Car:
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
+        self.speed = 0
+
+    def accelerate(self):
+        self.speed += 10
+
+    def display(self):
+        print(self.brand, self.color, self.speed)
+
+
+car1 = Car("BMW", "Black")
+car2 = Car("Audi", "White")
+
+car1.accelerate()
+car1.display()
+car2.display()
+
+
+class Car:
     def __init__(self,brand,model):
         self.brand=brand
         self.model=model
