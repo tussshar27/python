@@ -1,6 +1,7 @@
 def func1(a,b):
     print("Additon is:",a + b)
     print(f"a + b: {a+b}")
+    return f"a + b:{a+b}"
 
 def greater(a=5,b=10):     # by default a is 5
     if(a>b):
@@ -8,7 +9,7 @@ def greater(a=5,b=10):     # by default a is 5
     else:
         print("B is greater than or equal to A",b)
 
-func1(10,2)
+print(func1(10,2))
 greater(10,20)
 greater()
 greater(b=20)
