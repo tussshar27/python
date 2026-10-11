@@ -1,5 +1,6 @@
 def func1(a,b):
     print("Additon is:",a + b)
+    print(f"a + b: {a+b}")
 
 def greater(a=5,b=10):     # by default a is 5
     if(a>b):
