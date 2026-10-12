@@ -1,6 +1,8 @@
 # Python OOP: The Complete Beginner-to-Advanced Guide:
 # https://chatgpt.com/share/6acba5ad-cccc-83ee-a855-58b84ec02efd
 
+Everything in python is an object.
+
 # OOP : Object Oriented Programming
 # it is a way of writing programs by organizing code around objects rather than only writing a sequence of functions.
 
@@ -9,6 +11,12 @@
 # - Properties: brand, color, model, speed.
 # - Behaviours: start, accelerate, brake, stop.
 # In Python, we can represent a car as an object that contains both data and behaviour.
+
+# what is a Class and an Object?
+# real world example: 
+# if we want to construct a house so for that we will first create a blueprint/plan of it then the same blueprint can be used to construct other houses.
+# so, here the blueprint/plan is a class and house is the object.
+
 
 # Basic program:
 car_brand = "BMW"
@@ -27,27 +35,40 @@ BMW
 
 # This works. However, imagine managing 100 cars, each with a different brand, speed, and behaviour. You would need to organize all that data carefully.
 # OOP lets us group related data and behaviour together.
+# example OOPs 
 
 class Car:
-    def __init__(self, brand, color):
-        self.brand = brand
-        self.color = color
-        self.speed = 0
+  def __init__(self,brand,color):
+    self.brand = brand
+    self.color = color
+    self.speed = 0
 
-    def accelerate(self):
-        self.speed += 10
+  def accelerate(self):
+    self.speed += 100
 
-    def display(self):
-        print(self.brand, self.color, self.speed)
+  def display(self):
+    print("brand is ", self.brand)
+    print("color is ", self.color)
+    print("speed is ", self.speed)
+    return 1
+
+c1 = Car("AUDI","BLACK")
+c1.display()
+
+c2 = Car("BMW","SILVER")
+c2.accelerate()    #accelerate() is called, so the value of speed will get changed.
+c2.display()
+
+# output:
+brand is  AUDI
+color is  BLACK
+speed is  0
+brand is  BMW
+color is  SILVER
+speed is  100
 
 
-car1 = Car("BMW", "Black")
-car2 = Car("Audi", "White")
-
-car1.accelerate()
-car1.display()
-car2.display()
-
+=== Code Execution Successful ===
 
 class Car:
     def __init__(self,brand,model):
