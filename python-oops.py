@@ -58,6 +58,8 @@ c1.display()
 c2 = Car("BMW","SILVER")
 c2.accelerate()    #accelerate() is called, so the value of speed will get changed.
 c2.display()
+print(c2.brand)    #printing attribiutes/properties
+print(c2.colour)
 
 # output:
 brand is  AUDI
@@ -66,6 +68,8 @@ speed is  0
 brand is  BMW
 color is  SILVER
 speed is  100
+BMW
+SILVER
 
 
 === Code Execution Successful ===
