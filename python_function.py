@@ -1,4 +1,4 @@
-# if we write return inside a function then it must be displayed (print()) or used in other calculation like a variable
+# if we write "return" inside a function then in order to use it, we need to use print() to call the function or it can be used in other calculation like a variable
 # return is not mandatory in function, means we can use or call a function without mentioning return in it.
 def func0(a,b):
   print(f"a + b: {a+b}")
