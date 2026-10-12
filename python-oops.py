@@ -36,35 +36,40 @@ BMW
 # This works. However, imagine managing 100 cars, each with a different brand, speed, and behaviour. You would need to organize all that data carefully.
 # OOP lets us group related data and behaviour together.
 # example OOPs 
-    
-    class Car:
-      def __init__(self,brand,color):
+
+# __init__() is a special method in python. whatever method has __ __ in it then that method is a special method in python.
+# it is used to initialize whenever an object is created.
+
+
+class Car:
+    def __init__(self,brand,colour):
         self.brand = brand
-        self.color = color
+        self.colour = colour
         self.speed = 0
+        self.display2()
     
-      def accelerate(self):
+    def accelerate(self):
         self.speed += 100
 
     def display(self):
         print("brand is ", self.brand)
-        print("color is ", self.color)
+        print("colour is ", self.colour)
         print("speed is ", self.speed)
         return 1
 
-    def display(self):
+    def display2(self):
         print(f"Brand: {self.brand}, Colour: {self.colour}, Speed: {self.speed}")
 
 
-    c1 = Car("AUDI","BLACK")
-    c1.display()
+c1 = Car("TOYOTA","BLACK")
+c1.display()
     
-    c2 = Car("BMW","SILVER")
-    c2.accelerate()    #accelerate() is called, so the value of speed will get changed.
-    c2.display()
-    print(c2.brand)    #printing attribiutes/properties
-    print(c2.colour)
-
+c2 = Car("HONDA","SILVER")
+c2.accelerate()    #accelerate() is called, so the value of speed will get changed.
+c2.display()
+print(c2.brand)    #printing attribiutes/properties
+print(c2.colour)
+    
 # output:
 brand is  AUDI
 color is  BLACK
